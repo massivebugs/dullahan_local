@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block app_title%}Log-in{% endblock %}
+<!--  -->
+{% block main %}
+<div class="box auth-form has-text-centered">
+  <h3 class="title is-3">Create a new account</h3>
+  <form action="{% url 'sign_up' %}" method="POST">
+    {% csrf_token %} {{ form.non_field_errors }} {% for field in form %}
+    {{field.errors }}
+    <div class="auth-field">
+      {{ field.label_tag}}
+      <br />
+      {{field}}
+    </div>
+    {% endfor %}
+    <button class="button">Sign up</button>
+  </form>
+  <p>Already have an account? <a href="{% url 'log_in'%}">Log in!</a></p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,2 @@
+# dullahan_local
+DjangoとDjangoChannelsでロボットなどをコントロールするシステム

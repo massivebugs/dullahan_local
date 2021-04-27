@@ -1,0 +1,82 @@
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+  background-color: #eeeeee;
+}
+
+main {
+  min-height: 100%;
+}
+
+body.delete-device {
+  background-color: darkslategray !important;
+}
+/* Device Index specific */
+.device-button {
+  margin: 1rem 2rem;
+}
+
+.settings-button {
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+}
+
+.toggled {
+  bottom: 5em;
+}
+
+.button-group {
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  transition: width 1s;
+}
+
+.hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Home specific */
+
+.home-logo {
+  max-width: 40%;
+}
+
+.home-columns {
+  margin-top: 5rem;
+  padding: 2rem 5rem !important;
+}
+
+.column-text {
+	display: flex;
+	align-items: center;
+}
+
+.home-image {
+	border-radius: 50%;
+	max-width: 60%;
+}
+
+.navbar {
+  padding: 0 1rem;
+}
+
+.about-text {
+  padding: 0 25%;
+}
+
+.about-text p {
+  margin-top: 2em;
+}
+
+.auth-form {
+  margin: 5% 10%;
+}
+
+.auth-field {
+  margin-bottom: 1em;
+}

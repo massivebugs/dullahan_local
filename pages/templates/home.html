@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block app_title%}Home{% endblock %}
+{% load static %}
+<!--  -->
+{% block main %}
+<!-- Hero section -->
+<section class="neumorphism hero is-light is-medium" style="background-image: url({% static "images/home-hero.jpeg" %})">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-1 home-title has-text-black">
+        Dullahan Home Server
+      </h1>
+      <h2 class="subtitle is-4 home-subtitle has-text-black">
+        Home IoT Management Interface
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- Info section -->
+<div class="columns has-text-centered home-columns">
+  <div class="column">
+    <figure>
+	    <img src="{%static "images/board.jpg"%}" class="home-image">
+    </figure>
+  </div>
+    <div class="column column-text">
+      <p>Easily connect to your DIY IoT devices using HTTP, BlueTooth, ZigBee and more
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, diam et fermentum placerat, erat ante venenatis dolor, vel consequat ligula lorem at ipsum. Sed convallis eros vitae aliquam hendrerit. Aliquam sodales quam eu faucibus dictum. Morbi tempor interdum laoreet.
+    </p>
+    </div>
+</div>
+<div class="columns has-text-centered home-columns">
+  <div class="column column-text">
+    <p>Comes with a neat dashboard interface and automatic logging of data to the server.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, diam et fermentum placerat, erat ante venenatis dolor, vel consequat ligula lorem at ipsum. Sed convallis eros vitae aliquam hendrerit. Aliquam sodales quam eu faucibus dictum. Morbi tempor interdum laoreet.
+    </p>
+  </div>
+  <div class="column">
+    <figure>
+	    <img src="{%static "images/code.jpg"%}" class="home-image">
+    </figure>
+  </div>
+</div>
+{% endblock %}

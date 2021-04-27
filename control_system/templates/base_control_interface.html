@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block app_title%}Control Interface {% endblock %}
+{% load static %}
+{% block main %}
+<div class="columns">
+  <!-- Controls column -->
+  <div class="column is-half">
+    {% block console %} Console goes here {% endblock %} {% block controls %}
+    Controls go here {% endblock %}
+  </div>
+  <!-- Dashboard column -->
+  <div class="column is-half">
+    {% block dashboard %} Dashboard goes here {% endblock %}
+  </div>
+</div>
+<!-- <script src={% static "js/ajax_commands.js" %}></script> -->
+<script src={% static "js/socket.js" %}></script>
+{% endblock %}

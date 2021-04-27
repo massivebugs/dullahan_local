@@ -1,0 +1,11 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: belligerent
+font link: https://www.fontmonkey.com/archive1.php
+font author: P.D. Magnus
+font author site: https://www.fontmonkey.com/
+
+
+{"bg":"#FDEEEE","icon-gradient-0":"#F00079","icon-gradient-1":"#F2A041","font":"#361414","slogan":"#4a2828"}
+      

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block app_title %}Home{% endblock %} | Dullahan</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href={% static "css/bulma.css" %}>
+    <link rel="stylesheet" href={% static "css/styles.css" %}>
+    <link rel="stylesheet" href={% static "css/neumorphism.css" %}>
+  </head>
+  <body class="">
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="/">
+          Dullahan
+        </a>
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="toggled-items"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="toggled-items" class="navbar-menu">
+        <div class="navbar-end">
+          {% if user.is_authenticated %}
+          <a href="/" class="navbar-item">Welcome, {{user.get_username}}</a>
+          <a href="{% url 'log_out' %}" class="navbar-item has-background-danger">Log out</a>
+          {% else %}
+          <a href="{% url 'log_in' %}" class="navbar-item has-background-warning">Log in</a>
+          {% endif %}
+          <a class="navbar-item" href="/">Home</a>
+          <a class="navbar-item" href="/devices">Control</a>
+          <a class="navbar-item" href="/about">About</a>
+        </div>
+      </div>
+    </nav>
+    <!-- CUSTOM MAIN -->
+    <main class="section">
+      {% block main %}Main goes here{% endblock %}
+    </main>
+    <footer class="footer">
+<div class="content has-text-centered">
+  <p>
+    <strong>Dullahan Home Server</strong> by
+    Srae.</p>
+</div>
+    </footer>
+    <!-- JS -->
+    <script src={% static "js/navbarToggle.js" %}></script>
+  </body>
+</html>

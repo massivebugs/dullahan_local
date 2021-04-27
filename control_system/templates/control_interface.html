@@ -1,0 +1,106 @@
+{% extends "base_control_interface.html" %} {% load static %}
+
+<!-- Console -->
+{% block console %}
+<div class="console box has-background-grey-dark">
+  <div
+    class="output box has-background-grey-darker has-text-primary"
+    style="height: 15em; overflow-y: scroll;"
+  >
+  {% if selected_device != None %}
+  <p class="command-history" style="white-space: pre;">
+<progress class="progress is-small is-primary" max="100"></progress>
+  </p>
+  {% endif %}
+    {% if error_message %}
+    <p class="has-text-danger">{{ error_message }}</p>
+    {% endif %}
+  </div>
+    <form class="field has-addons command-form">
+      <div class="control is-expanded">
+        <input
+          class="input command-input"
+          type="text"
+          name="command"
+          placeholder="input command here"
+          autocomplete="off"
+        />
+      </div>
+    {% if selected_device != None %}
+      <input type="hidden" value="{{selected_device.id}}" name="device_id">
+    {% else %}
+      <input type="hidden" value="0" name="device_id">
+      {% endif %}
+      <div class="control">
+        <button class="button is-danger command-button">Send</button>
+      </div>
+    </form>
+</div>
+{% endblock %}
+
+<!-- Mappings -->
+{% block controls %}
+<div class="controls box has-background-grey-dark">
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <div class="tile is-child">
+        <button class="button">Placeholder Button</button>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <div class="tile is-child">
+        <button class="button">Placeholder Button</button>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <div class="tile is-child">
+        <button class="button">Placeholder Button</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- DASHBOARD -->
+{% block dashboard%}
+<!-- Device selection -->
+<div class="box has-background-grey-dark dashboard">
+  <label class="label">Select a device</label>
+  <form class="change-device-form field has-addons" method="GET" action="/devices/control">
+    <div class="control is-expanded">
+      <div class="select is-fullwidth">
+        <select name="device" id="device-select" required>
+          <option disabled selected value> -- Select a Device -- </option>
+          {% for instance in object_list %}
+          <option 
+          {% if selected_device.id == instance.id %}
+          selected
+          {% endif %}
+          value="{{instance.id}}">{{instance.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="control">
+      <button class="button has-background-danger" type="submit">
+        Select
+      </button>
+    </div>
+  </form>
+  {% if selected_device != None %}
+  <div class="box">
+   <p>Device Name: {{ selected_device.name }}</p>
+   <br>
+   <p id="device-id">{{ selected_device.id }}</p>
+   <br>
+   <p>Description: {{ selected_device.description }}</p>
+   <br>
+   <p>Connection Type: {{ selected_device.connection_type}}</p>
+  </div>
+  <div class="box">
+    Placeholder Statistics
+  </div>
+  {%endif%}
+</div>
+<script src={% static "js/changeDevice.js" %}></script>
+  {% endblock %}

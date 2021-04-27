@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block app_title%}Control Interface {% endblock %}
+{% load static %}
+{% block main %}
+<section class="has-text-centered">
+  <h2 class="title is-2">Devices Index</h2>
+{% for instance in object_list %}
+<a
+  href="{{instance.get_absolute_url}}"
+  class="button is-smaller device-button"
+  >{{instance.name}}
+</a>
+{% endfor %}
+</section>
+<button class="button is-rounded settings-button" type="button">Settings</button>
+<div class="button-group hidden">
+  <a href="/devices/new" class="button is-rounded is-link new-device-button"
+    >Add a New Device</a
+  >
+  <button class="button is-rounded is-danger delete-device-button">Delete</button>
+</div>
+<script src={% static "js/delete_device.js" %}></script>
+{% endblock %}

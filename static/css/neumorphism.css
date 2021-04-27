@@ -1,0 +1,88 @@
+/* .navbar {
+  border-bottom: 2px dotted darkgray;
+} */
+.navbar::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.neumorphism.hero {
+  border-radius: 20px;
+  background: #eeeeee;
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff;
+}
+
+.home-title,
+.home-subtitle {
+	text-shadow: 1px 1px 1px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
+
+.home-image {
+  box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff;
+}
+
+.footer {
+  border-radius: 20px;
+  background: #eeeeee;
+  box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff;
+}
+
+.device-button {
+  border: 0;
+  border-radius: 50px;
+background: linear-gradient(145deg, #c8d7ff, #a8b5e6);
+box-shadow:  9px 9px 18px #676f8c,
+             -9px -9px 18px #ffffff;
+}
+
+.device-button:focus {
+  outline: 0;
+  border-radius: 50px;
+background: #bbc9ff;
+box-shadow: inset 9px 9px 18px #676f8c,
+            inset -9px -9px 18px #ffffff;
+}
+
+.settings-button {
+  border: 0;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #ececec, #c7c7c7);
+  box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
+}
+.settings-button:hover,
+.settings-button:active {
+  outline: 0;
+  border-radius: 50px;
+  background: #dddddd;
+  box-shadow: inset 5px 5px 10px #b3b3b3, inset -5px -5px 10px #ffffff;
+}
+
+.new-device-button,
+.delete-device-button {
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px #b3b3b3, -5px -5px 10px #ffffff;
+}
+
+.console,
+.dashboard,
+.controls {
+  border-radius: 7px;
+  background: linear-gradient(145deg, #d6d6d6, #ffffff) !important;
+  box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff;
+}
+
+.auth-form,
+.section-box {
+  border-radius: 20px;
+  background: #eeeeee;
+  box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff;
+}

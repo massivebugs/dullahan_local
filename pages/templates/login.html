@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block app_title%}Log-in{% endblock %}
+<!--  -->
+{% block main %}
+<div class="box auth-form has-text-centered">
+  <h3 class="title is-3">Welcome to Dullahan Home Server 0.4</h3>
+  <form action="{% url 'log_in' %}" method="POST">
+    {% csrf_token %} {{ form.non_field_errors }}{% for field in form %}
+    <div class="auth-field">
+      {{ field.label_tag}} {{field}}
+    </div>
+    {% endfor %}
+    <button class="button">Log in</button>
+  </form>
+  <p>Don't have an account? <a href="{% url 'sign_up'%}">Sign up!</a></p>
+</div>
+
+{% endblock %}
